@@ -3,3 +3,4 @@ bytecode/*
 *
 # But not these
 !*.cpp
+!.gitignore
