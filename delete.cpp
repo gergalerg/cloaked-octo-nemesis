@@ -1,36 +1,30 @@
 // delete.cpp -- using the delete operator
 #include <iostream>
 #include <cstring>
-#include <fstream>
-
-#define SUBLIME
-
-#define ISTREAM ifile
 
 using namespace std;
-char * getname(void); //function prototype
+char * getname(void);
 int main()
 {
-	char * name;		// create pointer but no storage
+	char * name; 	// create pointer to name but no storage
 
-	name = getname();	// assign address of string to name
+	name = getname();	// assign address of string to us
 	cout << name << " at " << (int *) name << "\n";
-	delete [] name; 	// memory freed
+	delete [] name;		// memory freed
 
 	name = getname();
-	cout << name << " at " << (int *) name << "\n";
-	delete [] name; 	// memory freed again
+	cout << name << " at "  << (int *) name << "\n";
+	delete [] name; 		// memory freed again
 	return 0;
 }
 
-char * getname()
+char * getname() 	// return pointer to new string
 {
-	char temp[80];
-	cout << "Enter last name: ";
-	std::ifstream ifile("stdin.input");
-	ISTREAM >> temp;
+	char temp[80];		// temporary storgae
+	cout << "Enter the last name: ";
+	cin >> temp;
 	char * pn = new char[strlen(temp) + 1];
-	strcpy(pn, temp);  // copy string into smaller space
+	strcpy(pn, temp);
 
 	return pn;
 }
