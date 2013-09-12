@@ -8,6 +8,7 @@ int main()
 {
 	array<int, 5> ai; // create an array of 5 ints
 	array<double, 4> ad = {1.2, 2.1, 3.43, 4.3};
+	cout << ad[1] << " " << ad[0] << endl;
 	vector<int> vi;		// create a zero-size array of in
 	cout << sizeof(vi) << endl;
 	int n;
