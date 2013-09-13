@@ -1,18 +1,18 @@
-// testbed.cpp
+// test.cpp
 #include <iostream>
 
 int main()
 {
 	using namespace std;
-	char animal[20] = "bear";
-	const char * bird = "wren";
-	char * ps;
+	int x = 20;
+	{
+		int y = 100;
+		cout << x << endl;
+		cout << y << endl;
+	}
+	cout << x << endl;
 
-	ps = animal;
-	cout << "bird: " << ps << endl;
-	cout << (int *) animal << endl;
-	cout << (int *) ps << endl;
-	cout << &ps + 1 << endl;
+
 	return 0;
 }
 
