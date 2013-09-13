@@ -4,20 +4,21 @@
 int main()
 {
 	using namespace std;
-	cout << "Enter a word: ";
 	string word;
-	cin >> word;
-	cout << "Size of Word " << sizeof(word) << endl;
+	word = "chipotledfdasfsdf";
+	cout << word.size() << endl;
 
 	// physicallly modify string object
 	char temp;
-	int i, j;
+	double i, j;
 	for (j =0, i = word.size() - 1; j < i; --i, ++j)
 	{
 		temp = word[i];
 		word[i] = word[j];
 		word[j] = temp;
+		cout << temp << endl;
 	}
 	cout << word << "\nDone\n";
+
 	return 0;
 }
