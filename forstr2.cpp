@@ -11,7 +11,7 @@ int main()
 	// physicallly modify string object
 	char temp;
 	double i, j;
-	for (j =0, i = word.size() - 1; j < i; --i, ++j)
+	for (j = 0, i = word.size() - 1; j < i; --i, ++j)
 	{
 		temp = word[i];
 		word[i] = word[j];

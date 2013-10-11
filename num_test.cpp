@@ -3,9 +3,9 @@
 int main()
 {
 	using namespace std;
-	cout << "ENter the starting countdown value: ";
 	int limit;
-	cin >> limit;
+	limit = 10;
+	cout << "ENter the starting countdown value: ";
 	int i;
 	for (i = limit; i; i--)
 		cout << "i = " << i << "\n";

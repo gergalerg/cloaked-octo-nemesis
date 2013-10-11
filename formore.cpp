@@ -11,9 +11,12 @@ int main()
 		factorials[i] = i * factorials[i - 1];
 		cout << factorials[i] << " * " << factorials[i-1] << endl;
 	}
+	cout << 1LL << endl;
+	/*
 	for (int  i = 0; i < ArSize; i++)
 	{
 		cout << i << "! = " << factorials[i] << endl;
 	}
+	*/
 	return 0;
 }

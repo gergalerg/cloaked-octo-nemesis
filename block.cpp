@@ -1,4 +1,3 @@
-// block.cpp - use a block statement
 #include <iostream>
 int main()
 {
@@ -7,6 +6,7 @@ int main()
 	cout << "five numbers for you.\n";
 	cout << "Please enter five values:\n";
 	double number;
+	int *pt = new int[5];
 	double sum = 0.0;
 	for (int i= 1; i <= 5; i++)
 	{
