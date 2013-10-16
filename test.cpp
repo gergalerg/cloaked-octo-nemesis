@@ -3,10 +3,9 @@
 
 int main()
 {
-	using namespace std;
-	char ch;
-	for (ch = 'a'; ch <= 'z'; ch++)
-		cout << ch << " ";
+	int j = 5;
+	while ( j++ < 9)
+		std::cout << j++ << std::endl;
 
 	return 0;
 }
