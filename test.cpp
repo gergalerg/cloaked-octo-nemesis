@@ -1,11 +1,12 @@
 // test.cpp
 #include <iostream>
+#include <climits>
 
 int main()
 {
-	int j = 5;
-	while ( j++ < 9)
-		std::cout << j++ << std::endl;
+	using namespace std;
+	cout << "INT_MAX: " << INT_MAX << endl;
+	cout << "INT_MIN: " << INT_MIN << endl;
 
 	return 0;
 }
