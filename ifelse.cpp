@@ -11,9 +11,12 @@ int main()
 		if (ch == '\n')
 			std::cout << ch;
 		else
-			std::cout << ++ch;
+			std::cout << ++ch; 
 		std::cin.get(ch);
 	}
+	std::cout << sizeof(ch);
 	// try ch + 1 of ++ch for interesing effect
+	std::cout << "\nPlease excuse the slight confusion.\n";
+	
 	return 0;
 }
