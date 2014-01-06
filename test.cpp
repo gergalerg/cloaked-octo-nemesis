@@ -5,9 +5,10 @@
 int main()
 {
 	using namespace std;
-	cout << "INT_MAX: " << INT_MAX << endl;
-	cout << "INT_MIN: " << INT_MIN << endl;
-
+	int sloth = 3;
+	const int * ps = &sloth;
+	int * const finger = &sloth;
+	cout << sloth << endl;
 	return 0;
 }
 

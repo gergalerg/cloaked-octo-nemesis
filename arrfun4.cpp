@@ -9,6 +9,7 @@ int main()
 	// enable array initialization
 
 	const int cookies[ArSize] = {1,2,4,8,16,32,64,128};
+	cout << cookies << endl << cookies + 8 << endl;
 	int sum = sum_arr(cookies, cookies + ArSize);
 	cout << "Total cookies eaten: " << sum << endl;
 	sum = sum_arr(cookies, cookies + 3);
