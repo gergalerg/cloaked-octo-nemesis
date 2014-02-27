@@ -1,8 +1,8 @@
-// strctfun.cpp --- functions with a structure arg
+// strctfun.cpp -- functions with a structure argument
 #include <iostream>
 #include <cmath>
 
-// structure declarations
+// struct declaration
 struct polar
 {
 	double distance;
@@ -10,51 +10,54 @@ struct polar
 };
 struct rect
 {
-	/* data */
 	double x;
 	double y;
 };
 
 // prototypes
-polar rect_to_polar(rect xypos);
-void show_polar(polar dapos);
+void rect_to_polar(const rect * pxy, polar *pda);
+void show_polar(const polar * pda);
 
-int main()
+int main() 
 {
 	using namespace std;
 	rect rplace;
 	polar pplace;
 
-	cout << "Enter the x and y values: ";
-	while (cin >> rplace.x >> rplace.y) // slick use of cin
+	cout << "Enter x value: " << endl;
+	cin >> rplace.x; 
+	cout << "Enter y value: " << endl; 
+	cin >> rplace.y; 
+	rect_to_polar(&rplace, &pplace);
+	show_polar(&pplace);
+	/*
+	while (cin >> rplace.x >> rplace.y)
 	{
 		pplace = rect_to_polar(rplace);
 		show_polar(pplace);
-		cout << "Next two numbers (q to quit): ";
+		cout << "Next two numbers (q to quit) : ";
 	}
+	*/
 	cout << "Done.\n";
 	return 0;
 }
 
-// convert rectangular to polar coordinates
-polar rect_to_polar(rect xypos)
+// convert rectangular to polar
+void rect_to_polar(const rect * pxy, polar *pda)
 {
 	using namespace std;
-	polar answer;
-
-	answer.distance = 
-		sqrt( xypos.x * xypos.x + xypos.y * xypos.y);
-	answer.angle = atan2(xypos.y, xypos.x);
-	return answer;
+	pda->distance = 
+		sqrt (pxy->x * pxy->x + pxy->y * pxy->y);
+	pda->angle = atan2(pxy->y, pxy->x);
 }
 
 // show polar coordinates, converting angle to degrees
-void show_polar (polar dapos)
+void show_polar (const polar * pda)
 {
 	using namespace std;
 	const double Rad_to_deg = 57.29577951;
 
-	cout << "distance = " << dapos.distance;
-	cout << ", angle " << dapos.angle * Rad_to_deg;
-	cout << " degrees.\n";
+	cout << "distance = " << pda->distance;
+	cout << ", angle = " << pda->angle* Rad_to_deg;
+	cout << " degrees\n";
 }
