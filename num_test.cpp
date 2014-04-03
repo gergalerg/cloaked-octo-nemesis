@@ -3,12 +3,13 @@
 int main()
 {
 	using namespace std;
+	cout << "Enter the starting countdown value ";
 	int limit;
 	limit = 10;
-	cout << "ENter the starting countdown value: ";
 	int i;
+	cout.setf(ios_base::boolalpha);
 	for (i = limit; i; i--)
 		cout << "i = " << i << "\n";
 	cout << "Done now that i = " << i << "\n";
-	return 0;		
+	return 0;
 }

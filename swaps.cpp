@@ -11,11 +11,15 @@ int main()
 
 	cout << "wallet1 = $" << wallet1;
 	cout << " wallet2 = $" << wallet2 << endl;
+	cout << "address wallet1 = " << &wallet1 << endl;
+	cout << "address wallet2 = " << &wallet2 << endl;
 
 	cout << "Using references to swap contents:\n";
 	swapr(wallet1, wallet2); //pass variables
 	cout << "Wallet1 = $" << wallet1;
 	cout << " wallet2 = $" << wallet2 << endl;
+	cout << "address wallet1 = " << &wallet1 << endl;
+	cout << "address wallet2 = " << &wallet2 << endl;
 
 	cout << "Using pointers to swap contents again: \n";
 	swapp(&wallet1, &wallet2); //pass addresses of variables

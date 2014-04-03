@@ -4,18 +4,17 @@ int main()
 {
 	using namespace std;
 	int rats = 101;
-	int & rodents = rats; // reodents is a reference to rats
-	int * prats = &rats;
-	int * const pr = &rats;
+	pt * rats = rats;
+	int & rodents = rats;
 
 	cout << "rats = " << rats;
 	cout << ", rodents = " << rodents << endl;
 	rodents++;
 	cout << "rats = " << rats;
 	cout << ", rodents = " << rodents << endl;
-	cout << "pointer to rats = " << &prats << endl;
-	cout << "pointer to rats = " << prats << endl;
-	cout << "pointer pr = " << *pr << endl;
 
+	cout << "rats address = " << &rats;
+	cout << ", rodents address = " << &rodents << endl;
 
+	return 0; 
 }

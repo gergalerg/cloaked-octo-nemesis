@@ -6,22 +6,22 @@ using namespace std;
 char * getname(void);
 int main()
 {
-	char * name; 	// create pointer to name but no storage
-
-	name = getname();	// assign address of string to us
-	cout << name << " at " << (int *) name << "\n";
-	delete [] name;		// memory freed
+	char * name;
 
 	name = getname();
-	cout << name << " at "  << (int *) name << "\n";
-	delete [] name; 		// memory freed again
+	cout << name << " at " << (int *) name << "\n";
+	delete [] name;
+
+	name = getname(); // reuse freed memory
+	cout << name << " at " << (int *) name << "\n";
+	delete [] name;
 	return 0;
 }
 
-char * getname() 	// return pointer to new string
+char * getname()
 {
-	char temp[80];		// temporary storgae
-	cout << "Enter the last name: ";
+	char temp[80]; // temporary storage
+	cout << "Enter last name: ";
 	cin >> temp;
 	char * pn = new char[strlen(temp) + 1];
 	strcpy(pn, temp);
