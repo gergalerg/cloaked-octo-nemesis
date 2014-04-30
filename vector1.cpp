@@ -1,20 +1,22 @@
 #include <iostream>
 #include <vector>
-#include <array>
 
 using namespace std;
 
 int main() 
 {
-	float treacle[10];
-	float * ptreacle;
+	vector<int> myIntVector;
+	vector<int>::iterator myIntVectorIterator;
 
-	treacle[0] = 1.2;
-	treacle[9] = 10.2;
-
-	ptreacle = treacle;
-	cout << treacle[0] << " " << treacle[9] << endl;
-	cout << *ptreacle << " " << * (ptreacle + 9) << endl;
-
+	myIntVector.push_back(1);
+	myIntVector.push_back(4);
+	myIntVector.push_back(8);
+	for (myIntVectorIterator = myIntVector.begin();
+		myIntVectorIterator != myIntVector.end();
+		myIntVectorIterator++)
+	{
+		cout << *myIntVectorIterator<< " ";
+	}
 	return 0;
+
 }

@@ -1,11 +1,12 @@
-// firstref.cpp -- defining and using a reference
+// firstref.cpp 
 #include <iostream>
 int main()
 {
 	using namespace std;
+
 	int rats = 101;
-	pt * rats = rats;
 	int & rodents = rats;
+	int * const prats = &rats;
 
 	cout << "rats = " << rats;
 	cout << ", rodents = " << rodents << endl;
@@ -14,7 +15,9 @@ int main()
 	cout << ", rodents = " << rodents << endl;
 
 	cout << "rats address = " << &rats;
-	cout << ", rodents address = " << &rodents << endl;
+	cout << ", rodents adress = " << &rodents << endl;
+	cout << &prats << endl;
+	cout << *prats << endl;
 
-	return 0; 
+	return 0;
 }

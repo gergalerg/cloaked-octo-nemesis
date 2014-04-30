@@ -10,9 +10,8 @@ int main()
 
 void countdown(int n)
 {
-	using namespace std;
-	cout << "Counting down .. " << n << " (n at " << &n << ")" << endl;
+	std::cout << "Counting down ... "<< n << " (n at " << &n << std::endl;
 	if (n > 0)
-		countdown(n-1);
-	cout << n << ": Kaboom!" << " \t (n at " << &n << ")"<< endl;
+		countdown(n -1);  //function calls itself
+	std::cout << n << ": Kaboom!\n";
 }
