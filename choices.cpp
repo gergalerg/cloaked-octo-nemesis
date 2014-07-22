@@ -1,41 +1,31 @@
-// choices.cpp -- array variations
+// choices.cpp -- choosing a template
 #include <iostream>
-#include <vector>
-#include <array>
+
+template <class T>
+T lesser(T a, T b)
+{
+    return a < b ? a : b;
+}
+
+int lesser (int a, int b)  // #2
+{
+    a = a < 0 ? -a : a;
+    b = b < 0 ? -b : b;
+    return a < b ? a : b;
+}
+
 int main()
 {
-	using namespace std;
-	// C, original C++
-	// double a1[4] = {1.2, 2.4, 3,6, 4.8};
-	vector<double> a2(4);
-	a2[0] = 1.2;
-	a2[1] = 2.4;
-	a2[2] = 3.2;
-	a2[3] = 5.4;
-	cout << a2[0] << endl;
-	cout << a2[1] << endl;
-	cout << a2[2] << endl;
-	cout << a2[3] << endl;
-	array<double, 4> a3 = {3.14, 2.72, 1.62, 1.41};
-	cout << a3[0] << endl;
-	cout << a3[1] << endl;
-	cout << a3[2] << endl;
-	cout << a3[3] << endl;
-	array<double, 4> a4;
-	a4 = a3;
-	cout << a4[0] << endl;
-	cout << a4[1] << endl;
-	cout << a4[2] << endl;
-	cout << a4[3] << endl;
-	cout << "a3[0]: " << a3[0] << " at " << &a3[0] << endl;
-	cout << "a3[1]: " << a3[1] << " at " << &a3[1] << endl;
-	cout << "a3[2]: " << a3[2] << " at " << &a3[2] << endl;
-	cout << "a3[3]: " << a3[3] << " at " << &a3[3] << endl;
-	a3[-1] = 20.2;
-	cout << "a3[-1]: " << a3[-1] << " at " << &a3[-1] << endl;
-	a2.at(1) = 2.33;
-	cout << a2[0] << endl;
-	cout << a2[1] << endl;
-	cout << a2[2] << endl;
-	cout << a2[3] << endl;
+    using namespace std;
+    int m = 20;
+    int n = -30;
+    double x = 15.5;
+    double y = 25.9;
+
+    cout << lesser(m, n) << endl; // use #2
+    cout << lesser(x, y) << endl;  // use #1 with double
+    cout << lesser<>(m, n) << endl;  // use #1 with int
+    cout << lesser<int>(x, y) << endl; // use #1 with int
+
+    return 0;
 }
