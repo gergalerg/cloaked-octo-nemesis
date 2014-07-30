@@ -1,13 +1,18 @@
 // test.cpp
 #include <iostream>
+#include <string>
+
 
 using namespace std;
-
-int main(int argc, char *argv[], char **environ)
+int main()
 {
-    cout << "argc is: " << argc << endl;
-    for (int i = 0; i < argc; i++)
-        cout << argv[i] << endl;
-    cout << environ[0] << endl << environ[1] << endl;
-    return 1;
+    string name;
+    string dessert;
+
+    cout << "Enter a name and dessert";
+    cin >> name;
+    cout << "Enter a dessert";
+    cin >> dessert;
+    cout << name << endl << dessert << endl;
+    return 0; 
 }

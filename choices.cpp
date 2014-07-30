@@ -1,17 +1,24 @@
 // choices.cpp -- choosing a template
 #include <iostream>
 
-template <class T>
-T lesser(T a, T b)
+template<class T> // or template <typename T>
+T lesser(T a, T b)  // #1
 {
     return a < b ? a : b;
 }
 
-int lesser (int a, int b)  // #2
+int lesser (int a, int b) // #2
 {
     a = a < 0 ? -a : a;
     b = b < 0 ? -b : b;
     return a < b ? a : b;
+}
+
+template <class T1, class T2>
+void ft(T1 x, T2 y)
+{
+    decltype(x + y) xpy = x + y;
+    std::cout << xpy << std::endl;
 }
 
 int main()
@@ -24,8 +31,12 @@ int main()
 
     cout << lesser(m, n) << endl; // use #2
     cout << lesser(x, y) << endl;  // use #1 with double
-    cout << lesser<>(m, n) << endl;  // use #1 with int
-    cout << lesser<int>(x, y) << endl; // use #1 with int
+    cout << lesser<>(m, n) << endl; // use #1 with int
+    cout << lesser<int>(x, y) << endl;  // use #1 with int
+    decltype(x) t;
+    t = -20.0;
+    cout << lesser<double>(x, t) << endl; // use #2 ????
+    ft(x, y);
 
-    return 0;
+    return 0; 
 }

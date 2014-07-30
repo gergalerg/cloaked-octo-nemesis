@@ -1,21 +1,26 @@
-// file1.cpp -- example of a three-file program
+// file1.cpp
 #include <iostream>
-#include "coordin.h" // structure templates, function prototypes
 using namespace std;
-extern int cats = 20;
-int dogs = 22;
+void other();
+void another();
+int x = 10;
+int y;
+
 int main()
 {
-	rect rplace;
-	polar pplace;
+    cout << x << endl;
+    {
+        int x = 4;
+        cout << x << endl;
+        cout << y << endl;
+    }
+    other();
+    another();
+    return 0;
+}
 
-	cout << "Enter the x and y values: ";
-	while (cin >> rplace.x >> rplace.y) // slick use of cin
-	{
-		pplace = rect_to_polar(rplace);
-		show_polar(pplace);
-		cout << "Next two numbers (q to quit): ";
-	}
-	cout << "Bye!\n";
-	return 0;
+void other()
+{
+    int y = 1;
+    cout << "Other: " << x << ", " << y << endl;
 }

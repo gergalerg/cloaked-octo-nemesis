@@ -1,29 +1,13 @@
-// file2.cpp -- contains functions called in file1.cpp
+// file2.cpp
 #include <iostream>
-#include <cmath>
-#include "coordin.h" // structure templates, function prototypes
-
-extern int cats;
-extern int dogs;
-// convert rectangular to polar coordinates
-polar rect_to_polar(rect xypos)
+using namespace std;
+extern int x;
+namespace
 {
-	using namespace std;
-	polar answer;
-
-	answer.distance = 
-		sqrt( xypos.x * xypos.x + xypos.y * xypos.y);
-	answer.angle = atan2(xypos.y, xypos.x);
-	return answer;  // returns a polar structure
+    int y = -4;
 }
 
-// show polar coordinates, converting angle to degrees
-void show_polar (polar dapos)
+void another()
 {
-	using namespace std;
-	const double Rad_to_deg = 57.29577951;
-
-	cout << "distance = " << dapos.distance;
-	cout << ", angle = " << dapos.angle * Rad_to_deg;
-	cout << " degrees\n";
+    cout << "another(): " << x << ", " << y << endl;
 }
