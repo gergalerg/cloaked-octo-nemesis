@@ -1,24 +1,25 @@
+// newstrct.cpp -- using new with a structure
 #include <iostream>
+#include <string>
+
 struct inflatable
 {
-	char name[20];
-	float volume;
-	double price;
+    std::string name;
+    float volume;
+    double price;
 };
-
 int main()
 {
-	using namespace std;
-	inflatable *ps = new inflatable; // allot memory
-	cout << "Enter name of inflatable item (less than 20 ch): ";
-	cin.get(ps->name,20); // method 1 for member access
-	cout << "Enter volume in cubic feet: ";
-	cin >> (*ps).volume;	// method 2 for member access
-	cout << "Enter price: $";
-	cin >> ps->price;
-	cout << "Name: " << (*ps).name << endl; //method 2
-	cout << "Volume: " << ps->volume << " cubic feet\n"; //method 1
-	cout << "Price: $" << ps->price * ps->volume<< endl; // method 1
-	delete ps;  // free memory used by struct
-	return 0;
+    using namespace std;
+    inflatable * ps = new inflatable;
+    ps->name = "Gerg";
+    ps->volume = 10.0;
+    ps->price = 39.95;
+
+    cout << ps-> name << " Name " << endl;
+    cout << ps->volume << " cubic feet\n";
+    cout << ps->price << "$" <<  endl;
+    delete ps; // free memeory used by structure
+
+    return 0;
 }
