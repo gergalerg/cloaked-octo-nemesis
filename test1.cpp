@@ -1,20 +1,25 @@
-// test1.cpp
 #include <iostream>
-void show_array(const double ar[], int n);
-int main() 
-{
-	int n = 4;		
-	double ar[n];
-	show_array(ar, n);
-	return 0;
-}
+#include <string>
 
-void show_array(const double ar[], int n)
+
+class Item
 {
-	using namespace std;
-	for (int i = 0; i < n; i++)
-	{
-		cout << "Property #" << (i + 1) << ": $";
-		cout << ar[i] << endl;
-	}
+private:
+    std::string ItemName;
+public:
+    Item();
+    Item(std::string & st) { ItemName = st; };
+    void show() { std::cout << "ItemName is " << ItemName << std::endl;}
+};
+struct Node
+{
+    Item item;
+};
+int main()
+{
+    std::string name = "Greg";
+    Item greg(name);
+    greg.show();
+
+    return 0;
 }

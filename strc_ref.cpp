@@ -11,7 +11,7 @@ struct free_throws
 
 void display(const free_throws & ft);
 void set_pc(free_throws & ft);
-free_throws & accumulate(free_throws & target, const free_throws & source);
+free_throws accumulate(free_throws & target, const free_throws & source);
 
 int main() 
 {
@@ -31,7 +31,9 @@ int main()
 	display(team);
 	// use return value as argument
 	display(accumulate(team, two));
-	accumulate(accumulate(team, three), four);
+	//accumulate(accumulate(team, three), four);
+	accumulate(team, three);
+	accumulate(team, four);
 	display(team);
 	// use return value in assignment
 	dup = accumulate(team, five);
@@ -63,7 +65,7 @@ void set_pc(free_throws & ft)
 		ft.percent = 0;
 }
 
-free_throws & accumulate(free_throws & target, const free_throws & source)
+free_throws  accumulate(free_throws & target, const free_throws & source)
 {
 	target.attempts += source.attempts;
 	target.made += source.made;

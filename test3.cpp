@@ -1,26 +1,22 @@
-// functon returning the max between integers
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
-int max(int num1, int num2);
+struct Enode {
+    Enode *left;
+    Enode *right;
+};
 
 int main()
 {
-	int num1 = 4;
-	int num2 = 5;
+    Enode* n = new Enode;
+    Enode* pn = new Enode;
+    n->left  = pn;
+    cout << sizeof(n) << endl;
+    cout << sizeof(pn) << endl;
+    cout << n << endl;
+    cout << pn << endl;
 
-	cout << max(3, 7) << endl;
-}
-
-int max(int num1, int num2)
-{
-	int result;
-
-	if (num1 > num2)
-		result = num1;
-	else
-		result = num2;
-
-	return result;
+    return 0;
 }
