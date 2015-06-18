@@ -55,7 +55,7 @@ Useless::Useless(int k, char ch) : n (k)
     ShowObject();
 }
 
-Useless::Useless(const Useless & f) : n(f.n)
+Useless::Useless(const Useless & f) : n(f.n) // regular copy constructor
 {
     ++ct;
     cout << "copy const called; number of objects: " 
@@ -66,7 +66,7 @@ Useless::Useless(const Useless & f) : n(f.n)
     ShowObject();
 }
 
-Useless::Useless(Useless && f) : n(f.n)
+Useless::Useless(Useless && f) : n(f.n) // move constructor
 {
     ++ct;
     cout << "Move constructor called; number of objects: " 
