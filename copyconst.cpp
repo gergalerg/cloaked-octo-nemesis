@@ -1,4 +1,8 @@
 #include <iostream>
+#include <typeinfo>
+#include <type_traits>
+
+typedef unsigned long Item;
 
 struct A {
     int n;
@@ -17,6 +21,7 @@ struct C : B {
 private: 
     C(const C&);  // non-copiable C++98 style
 };
+typedef typename std::remove_reference<int>::type TR;
 
 int main()
 {
@@ -27,7 +32,10 @@ int main()
     A a3 = b; // conversion to A& and copy ctor
     a3.Show();
     volatile A va(10);
-    
+    C c1; 
+    c1.Show();
+    unsigned long s = 5;
+    std::cout << typeid(TR).name();
 
 
 
