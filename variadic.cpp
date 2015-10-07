@@ -27,6 +27,5 @@ int main()
     std::cout << std::endl;
     show_list3(x*x, '!', 7, mr);
 
-    std::atomic_int atom1 = 5;
 
 }

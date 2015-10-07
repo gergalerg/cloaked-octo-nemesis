@@ -1,31 +1,23 @@
+#include <cstddef>
 #include <iostream>
-#include <string>
-#include <cmath>
 
-struct free_throws {
-    int points;
-    double percentage;
-    std::string name;
-    int pfd[2];
-};
-
-const free_throws & clone(free_throws & ft){
-    free_throws & pt = ft;
-    return pt;
+template<typename F, typename A>
+void Fwd(F f, A a)
+{
+    f(a);
 }
 
-void Show(const free_throws &ft) {
-    std::cout << ft.name << "\t" << ft.points << "\t" << ft.percentage << "\n";
+void g(int *i)
+{
+    std::cout << "Function g called\n";
 }
+
 int main()
-{  
+{
+    g(NULL);
+    g(0);
 
-    free_throws Angels = {10, 88.8, "Angels"};
-    free_throws &nice = Angels;
-    const free_throws &Doobers = clone(nice);
-    Angels.points = 20;
-    Show(Angels);
-    Show(nice);
-    Show(Doobers);
-    return 0;
+    Fwd(g, NULL);
 }
+
+
